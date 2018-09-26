@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <h3>Notes App_Vue.js</h3>
+        <div class="enter clearfix">
+            <div class="left fl">
+                <p>几秒前</p>
+            </div>
+            <div class="right fl">
+                <input type="text" class="title" value="新建笔记" v-model="title">
+                <a href="#" class="add" @click.stop="add">添加笔记</a>
+                <textarea v-model="message" @keyup="nu">asdf
+                asdf </textarea>
+                <p class="number">{{number}}字</p>
+            </div>
+        </div>
+        <div class="main clearfix" v-for="(set,index) in set">
+            <div class="left fl">
+                <p>{{set.t}}</p>
+            </div>
+            <div class="right fl">
+                <h4>{{set.title}}</h4>
+                <textarea class="article" @keyup="nu1(index,$event)">{{set.txt}}</textarea>
+                <div class="article-bottom clearfix">
+                    <p class="number fl">{{set.n}}字</p>
+                    <div class="del fr" @click="del(index)">删</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
